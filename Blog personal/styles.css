@@ -1,0 +1,34 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background-color: slategrey;
+}
+
+header{
+    background-color:darkslategrey;
+    color: beige;
+    padding: 3rem 2rem;
+    text-align: center;
+    font-size: 2rem
+}
+
+.contenedor_general{
+    width: 400px;
+    margin: 1rem auto;
+}
+
+.tarjeta{
+    background-color: darkgrey;
+    border-radius: 1.5rem;
+}
+
+section h2, section p {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    text-align: justify;
+}
+
+.foto{
+    width: 400px;
+    border-radius: 1.5rem;
+}
