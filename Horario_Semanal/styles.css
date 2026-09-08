@@ -1,0 +1,88 @@
+/*
+*{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+*/
+
+h1{
+    text-align: center;
+    margin: 25rem 0 0 0;
+    padding: 0;
+}
+#contenedor_principal{
+    max-width: 1200px;
+    margin: 0 auto 20rem auto; 
+    display: table;
+    /*background-color: rgba(255,0,255,0.09);*/
+    /*
+    border: solid;
+    border-color: black;
+    border-radius: 8px;
+    */
+}
+
+#tabla thead th{
+    text-align: center;
+    background-color: rgba(90,0,250, 0.2);
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.hora{
+    text-align: center;
+    background-color: rgba(90,0,250, 0.5);
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+tbody td{
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.practicas{
+    background-color: rgba(104,34,109,0.2)
+}
+
+.gimnasio{
+    background-color: rgba(147,112,190,0.5)
+}
+
+.cardio{
+    background-color: rgba(147,112,190,0.5)
+}
+
+.ejercicios{
+    background-color: rgba(104,34,109,0.2)
+}
+
+.desayuno{
+    background-color: rgba(199,21,33,0.2)
+}
+
+.almuerzo{
+    background-color: rgba(199,21,33,0.2)
+}
+
+.repaso{
+    background-color: rgba(128,0,128,0.5);
+}
+
+.investigacion_html{
+    background-color: rgba(128,0,128,0.5);
+}
+
+.investigacion_css{
+    background-color: rgba(128,0,128,0.5);
+}
+
+.limpiar_casa{
+    background-color: rgba(171,130,255,0.3)
+}
+
+.descanso{
+    background-color: rgba(255,130,255,0.3)
+}
