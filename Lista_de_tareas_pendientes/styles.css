@@ -8,7 +8,7 @@ body{
     background-color: darkslategray;
 }
 
-.contenedor_general{
+#contenedor_general{
     background-color: dimgrey;
     margin: 2rem;
     padding: 0 1rem 1rem 1rem;
@@ -16,7 +16,10 @@ body{
     border: inset;
     border-color: cyan;
     border-width: thick;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
+
+
 .header{
     padding: 0.3rem 1rem 0.8rem 1rem
 }
@@ -26,7 +29,7 @@ body{
 }
 
 .header p{
-    margin: 0;
+    margin-top: 0.8rem;
     color: beige
 }
 
@@ -44,6 +47,10 @@ body{
     border-color: aquamarine
 }
 
+.tareas:hover{
+    background-color: #2f5e57;
+    cursor: pointer;
+}
 .tareas label{
     color: white;
     margin: 0.5rem;
