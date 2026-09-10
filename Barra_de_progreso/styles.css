@@ -1,0 +1,21 @@
+body{
+    background-color: dimgrey;
+    padding:35rem 0rem;
+}
+
+.barra-contenedor{
+    width: 100%;
+    height: 20px;
+    background-color: #2a2a2a;
+    border: solid;
+    border-color: rgba(157, 17, 250, 1);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.barra-relleno{
+    height: 100%;
+    background: #17d7e8;
+    background: linear-gradient(90deg, rgba(23, 215, 232, 1) 3%, rgba(41, 179, 165, 1) 27%, rgba(43, 78, 181, 1) 53%, rgba(46, 67, 184, 1) 79%, rgba(157, 17, 250, 1) 100%);
+    transition: width 0.4s ease; /* si el % cambia con JS después, se anima suave */
+}
