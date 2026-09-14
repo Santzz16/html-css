@@ -1,0 +1,124 @@
+footer{
+    position: relative;
+    background-color: #0d0d0d;
+    padding: 4rem 2rem 1.5rem;
+}
+
+footer::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1d9e75, transparent);
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-grid div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-marca h3{
+    font-size: 1.2rem;
+    color: #eaeaea;
+}
+
+.footer-marca p{
+    color: #888;
+    font-size: 0.85rem;
+    max-width: 26ch;
+}
+
+.footer-grid h4{
+    color: #eaeaea;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.footer-grid > div:not(.footer-marca) a{
+    position: relative;
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    width: fit-content;
+    transition: color 0.2s ease;
+}
+
+.footer-grid > div:not(.footer-marca) a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background: #1d9e75;
+    transition: width 0.25s ease;
+}
+
+.footer-grid > div:not(.footer-marca) a:hover{
+    color: #1d9e75;
+}
+
+.footer-grid > div:not(.footer-marca) a:hover::after{
+    width: 100%;
+}
+
+.footer-redes{
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.icono-red{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #2a2a2a;
+    color: #999;
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.icono-red:hover{
+    border-color: #1d9e75;
+    color: #1d9e75;
+    transform: translateY(-2px);
+}
+
+.footer-abajo{
+    max-width: 1000px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 720px){
+    .footer-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-marca{
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px){
+    .footer-grid{
+        grid-template-columns: 1fr;
+    }
+}
