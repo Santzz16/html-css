@@ -1,0 +1,244 @@
+/* ===== Base ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 4rem;
+    font-family: "Poppins", system-ui, sans-serif;
+    color: #12303a;
+    background: linear-gradient(160deg, #a5b4fc 0%, #818cf8 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* ===== Encabezado ===== */
+
+.encabezado {
+    text-align: center;
+    padding: 3rem 1rem 1rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    color: #14213d;
+}
+
+.subtitulo {
+    margin: 1rem auto 0;
+    max-width: 38ch;
+    font-size: 1rem;
+    color: #2b2f5a;
+    opacity: 0.85;
+}
+
+/* ===== Contenedor de planes ===== */
+
+#planes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: 3rem 1rem;
+    justify-content: center;
+    align-items: stretch; /* todas las tarjetas igual de altas */
+}
+
+/* ===== Tarjetas ===== */
+
+.tarjetas {
+    width: 320px;
+    background-color: #5f9ea0;
+    padding: 1.75rem 1.5rem 7rem; /* espacio abajo para el precio */
+    position: relative;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(30, 41, 59, 0.18), 0 2px 6px rgba(30, 41, 59, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjetas:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.28);
+}
+
+/* Plan destacado */
+
+#pro {
+    background-color: #55939a;
+    border: 2px solid #e5fb19;
+    transform: translateY(-12px);
+}
+
+#pro:hover {
+    transform: translateY(-20px);
+}
+
+.etiqueta {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.3rem 1.1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #14213d;
+    background-color: #e5fb19;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(30, 41, 59, 0.2);
+}
+
+/* ===== Títulos de tarjeta ===== */
+
+.tarjetas h2 {
+    margin: 0 0 0.75rem;
+    text-align: center;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+}
+
+.tarjetas .color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    margin: 0 1.5rem 1.25rem;
+    font-size: 1.05rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: #f4fbfb;
+    background-color: #14213d;
+    transform: skewX(-12deg);
+}
+
+.tarjetas .color strong {
+    transform: skewX(12deg); /* endereza el texto dentro del banner inclinado */
+}
+
+/* ===== Textos ===== */
+
+.descripcion {
+    margin: 0 0 1.25rem;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #edf7f7;
+}
+
+.incluye {
+    margin: 0 0 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: #14213d;
+}
+
+/* ===== Listas ===== */
+
+.detalles {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.detalles > li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.93rem;
+    line-height: 1.45;
+    color: #f2fafa;
+}
+
+.detalles > li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: #e5fb19;
+}
+
+.subdetalles {
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.subdetalles li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.87rem;
+    opacity: 0.9;
+}
+
+.subdetalles li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+}
+
+/* ===== Precio ===== */
+
+.precio {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background-color: #e5fb19;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px rgba(30, 41, 59, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tarjetas:hover .precio {
+    transform: scale(1.03);
+}
+
+.precio p {
+    margin: 0;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: #14213d;
+}
+
+.precio strong {
+    font-size: 1.35rem;
+    letter-spacing: 0;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 720px) {
+    .tarjetas,
+    #pro {
+        width: 100%;
+        max-width: 360px;
+        transform: none;
+    }
+
+    .tarjetas:hover,
+    #pro:hover {
+        transform: translateY(-6px);
+    }
+}
+
+/* ===== Accesibilidad ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    .tarjetas,
+    .precio {
+        transition: none;
+    }
+}
