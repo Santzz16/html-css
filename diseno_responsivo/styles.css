@@ -1,0 +1,116 @@
+/* ---------- Variables de color y tipografía ---------- */
+:root {
+  --fondo: #eef1f4;
+  --texto: #1d2733;
+  --texto-suave: #55636f;
+  --acento: #0f6e6e;
+  --placeholder: #cfd8e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+#cabecera {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;   
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.75rem,  4vw, 2.75rem);
+  letter-spacing: -0.02em;
+}
+
+
+#indicador {
+  margin: 0;
+  padding: 6px 14px;
+  border: 2px solid var(--acento);
+  border-radius: 999px;
+  color: var(--acento);
+  font-weight: 600;
+}
+
+/* ---------- Galería (mobile first) ---------- */
+/* Por defecto (celular): 1 columna */
+.galeria {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 20px 48px;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+#indicador::after {
+  content: "1 columna";
+}
+
+
+.tarjeta figure {
+  margin: 0;
+}
+
+.foto {
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--placeholder); 
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;       
+  object-fit: cover;         
+  transition: transform 0.3s ease;
+}
+
+.foto:hover img{
+  transform: scale(1.06);
+}
+
+figcaption {
+  padding-top: 8px;
+  color: var(--texto-suave);
+  font-size: 1rem;
+}
+
+
+@media (min-width: 601px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    
+  #indicador::after {
+    content: "2 columnas";
+  }
+}
+
+/* ---------- Computador: desde 901px, 4 columnas ---------- */
+@media (min-width: 901px) {
+  .galeria {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #indicador::after {
+    content: "4 columnas";
+  }
+}
+
