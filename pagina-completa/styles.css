@@ -1,0 +1,99 @@
+:root{
+    --acento-principal: #2563EB;
+    --acento-principal-2: linear-gradient(135deg, #4F46E5, #7C3AED); /* se crean los colores de toda la pagina */
+    --neutro-oscuro: #0F172A;
+    --neutro-medio: #475569;
+    --neutro-claro-: #F8FAFC;
+    --neutro-claro-2: #FFFFFF;
+    --bordes-sutiles: #E2E8F0;
+}
+
+*{
+    box-sizing: border-box;  /*se define border box para falicitar el diseño responsivo a hacer que los elementos mantengan su */
+    margin: 0;              /* dimension original, sin que el paddong afecte esta*/
+    padding: 0;             /* se define la fuente de la pagina*/
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+}
+
+header{
+    padding: 15px 20px;
+}
+.navbar{
+    display: grid;  /* se utiliza grid para que las columans 1 y 3 midan siempre lo mismo manteniendo el menu en el centro*/
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;  /*esto centra los items en sentido vertical*/
+    height: 80px;
+}
+
+.navbar a{
+    text-decoration: none;
+}
+
+/*LOGO NEXUSCOP*/
+.logo-icon{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 10px;
+    background-image: var(--acento-principal-2);
+    color: var(--neutro-claro-2);
+}
+
+.text-nexus{
+    font-weight: 900;
+    font-size: 20PX;
+    color: var(--neutro-oscuro);
+}
+
+.text-scorp{
+    font-weight: 900;
+    font-size: 20PX;
+    background-image: var(--acento-principal-2); /*se utiliza background-image ya que color no permite gradientes*/
+    background-clip: text;                          /*los gradientes son como una imagen que genera css*/
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/*BARRA DE NAVEGACION*/
+.menu{
+    display: flex;
+    list-style: none;
+}
+
+.menu a{
+    display: block;
+    color: var(--neutro-medio);
+    margin: 12px 14px;
+}
+
+.menu a:hover{
+    background-image: var(--acento-principal-2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/*BOTON EMPEZAR*/
+.btn-empezar {
+    justify-self: end;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 450;
+    background-color: #ede9fe;
+    color: #6d28d9;
+    padding: 13px 20px;
+    border-radius: 10px;
+}
+
+.btn-empezar:hover{
+    background-color: #ddd6fe; /* un lavanda un poco más saturado/oscuro */
+}
+
