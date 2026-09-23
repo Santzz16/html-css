@@ -30,7 +30,7 @@ header{
     height: 80px;
 }
 
- a{
+ body a{
     text-decoration: none;  /*Se elimina la linea debajo de todos los links*/
 }                           
 
@@ -131,7 +131,7 @@ main{
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(10px); /* soporte Safari */
     
-    border: 0.01px ridge var(--bordes-sutiles);
+    border: 1px ridge var(--bordes-sutiles);
     border-radius: 20px;
     
     color: var(--bordes-sutiles);
@@ -192,7 +192,7 @@ main{
 }
 
 .btn-servicios{
-    background-color: rgb(248, 250, 252,0.2);
+    background-color: rgb(248 250 252 / 0.2);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(10px); /* soporte Safari */
     border: 0.01px ridge var(--bordes-sutiles);
@@ -215,7 +215,7 @@ main{
 
 #servicios h2{/* texto "servicios" */
     font-weight: 700;
-    font-size: 16px; /* o el valor exacto que buscás para el kicker */
+    font-size: 16px; 
     letter-spacing: 1px; 
     background-image: var(--acento-principal-2);
     background-clip: text;
@@ -246,7 +246,7 @@ main{
     
     background-color: #EEF2FF;
     
-    border: 0.01px solid var(--bordes-sutiles);
+    border: 1px solid var(--bordes-sutiles);
     border-radius: 20px;
     padding: 20px;
     
@@ -263,9 +263,129 @@ main{
 .imagen{
     width: 50px;
     height: 50px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .carta p{
+    color: var(--neutro-medio);
+}
+
+
+/*CONTACTANOS*/
+
+#contactanos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /*todos los hijos directos de hero se alinean verticalmente al medio*/
+    align-items: center;        /*Todos los hijos directos de hero se alinean horizontalmente al medio*/   
+    padding: 80px 20px 20px;
+    gap: 15px;
+    background-color: var(--neutro-claro);
+}
+
+#contactanos h2{    /*texto contactanos*/
+    font-weight: 700;
+    font-size: 16px; 
+    letter-spacing: 1px; 
+    background-image: var(--acento-principal-2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+
+.hablemos{
+    font-weight:bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.completa{
+    color: var(--neutro-medio);
+}
+
+
+#contactanos form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%; /*Si la pagina se achica el form se ajustara a la pagina*/
+    max-width: 600px; /*EN pantallas anchas el form no se encancha mas de 900px*/
+    padding: 50px 20px;
+    margin: 30px 0;
+    background-color: var(--neutro-claro-2);
+    border: 1px solid var(--bordes-sutiles);
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#contactanos form div{ /*se utiliza para que cada label quede mas pegado a su input o textarea sin que el padding del form lo afecte*/
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start; /*Alinea todo el label y su input o textarea a la izquierda*/
+}
+
+#contactanos form div label {
+    font-weight: 500;
+    font-size: medium;
+}
+#contactanos form div input, #contactanos form div textarea {   
+    width: 100%;        /*Hace que los input y textarea se encanchen hasta que topen el padding del form*/
+    padding: 12px 14px;
+    border: 1px solid var(--bordes-sutiles);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    resize: vertical; /*APlica solo para el textarea y hace que el usuario no la pueda redimensioanr a los ado, solo hacia abajo*/
+}
+
+
+#contactanos form button {
+    border: none;  
+    cursor: pointer;   
+    font-family: inherit;  
+    font-size: 18px;
+    font-weight: 450;
+    background-color: var( --acento-principal);
+    color: var(--neutro-claro-2);
+    padding: 13px 20px;
+    border-radius: 10px;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    background-color: var(--neutro-oscuro);
+    padding: 60px 40px;
+}
+
+footer h2{
+    color: var(--neutro-claro);
+}
+
+.enlaces ul{
+    list-style: none;
+}
+
+.enlaces a{
+    display: block;   /*se utiliza para que los margin y padding funcione de maejor manera*/
+    color: var(--neutro-medio);
+    margin: 12px 0;
+}
+
+.contacta-footer{
+    height: 100%;
+}
+
+.contacto-directo {
+    height: 100%;
+    max-width: 200px;
+}
+
+.contacto-directo p{
     color: var(--neutro-medio);
 }

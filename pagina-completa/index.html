@@ -44,7 +44,7 @@
             <p>Soluciones integrales de infraestructura, análisis en tiempo real y arquitectura de software para escalar sin límites operativos.</p>
             
             <div class="inicio-btn">
-                <a href="#formulario" class="btn-demostracion">Solicitar Demostración</a>
+                <a href="#contactanos" class="btn-demostracion">Solicitar Demostración</a>
                 <a href="#servicios" class="btn-servicios">Explorar Servicios</a>
             </div>
         </section>
@@ -88,22 +88,50 @@
         
         <section id="contactanos">
             <h2>Contactanos</h2>
-            <p>Hablemos de tu próximo proyecto</p>
-            <p>Completa el formulario y un especialista responderá en menos de 2 horas.</p>
+            <p class="hablemos">Hablemos de tu próximo proyecto</p>
+            <p class="completa">Completa el formulario y un especialista responderá en menos de 2 horas.</p>
             
             <form>
-                <label for="nombre">Nombre Completo</label>
-                <input type="text" id="nombre" placeholder="Ej. Nombre Apellido" required>
-                
-                <label for="#email">Correo Electronico</label>
-                <input type="email" id="email" placeholder="nombre@empresa.com" required>
-                
-                <label for="#mensaje">Mensaje</label>
-                <input type="text" id="mensaje" placeholder="Cuéntanos sobre tus requerimientos...">
-                
-                <button type="button">Enviar Mensaje</button>
+                <div>
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ej. Nombre Apellido" required>
+                </div>
+                <div>
+                    <label for="email">Correo Electronico</label>
+                    <input type="email" name="email" id="email" placeholder="nombre@empresa.com" required>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" placeholder="Cuéntanos sobre tus requerimientos..." required rows="4"></textarea>
+
+                </div>
+                    <button type="submit">Enviar Mensaje</button>
             </form>
         </section>
     </main>
+    
+    
+    <footer id="contacto">
+        <section class="enlaces">
+            <h2>Enlaces rápidos</h2>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios Enterprise</a></li>
+                <li><a href="#casos-de-exito">Casos de exito</a></li>
+                <li><a href="#contactanos">Centro de Soporte</a></li>
+            </ul>
+        </section>
+        
+        <section class="contacta-footer">
+            <h2>Conecta con nosotros</h2>
+        </section>
+        
+        <section class="contacto-directo">
+            <h2>Contacto directo</h2>
+            <p>Torre Corporativa Nexus, piso 14</p>
+            <p>contacto@nexuscorp.example.com</p>
+            <p>+34 (900) 555-0199</p>
+        </section>
+    </footer>
 </body>
 </html>
