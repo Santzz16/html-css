@@ -11,8 +11,8 @@
 </head>
 <body>
 	<header>
-        <nav class="navbar">
-                <a href="#inicio" class="logo-link">
+        <nav class="navbar"> <!-- Se crea la barra de navegacion completa dentro de header para que quede hasta arriba -->
+                <a href="#inicio" class="logo-link"> <!-- Se crea un link que envuelve tanto el logo como el texto-->
                     <div class="logo">
                         <span class="logo-icon">N</span>
                         <span class="logo-text">
@@ -24,12 +24,86 @@
             <ul class="menu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contactanos">Contactanos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             
-            <button class="btn-empezar" type="button">Empezar</button>
+            <button class="btn-empezar" type="button">Empezar</button> <!-- Se le aplica type button ya que si no la pagina reiniciaria al presionarlo -->
         </nav>
     </header>
+    
+    <main>
+        <section id="inicio">  
+            <div class="pastilla"> <!-- Se crea la pastilla que envuelvve tanto el circulo como el texto-->
+                <span class="dot"></span> <!-- Se crea el span para poder generar el circulo despue-->
+                Plataforma Cloud Enterprise 2026 <!-- Texto unicamente dentro del div .pastilla-->
+            </div>
+            
+            <h1>Impulsa tu empresa con tecnología de nueva generación</h1>
+            
+            <p>Soluciones integrales de infraestructura, análisis en tiempo real y arquitectura de software para escalar sin límites operativos.</p>
+            
+            <div class="inicio-btn">
+                <a href="#formulario" class="btn-demostracion">Solicitar Demostración</a>
+                <a href="#servicios" class="btn-servicios">Explorar Servicios</a>
+            </div>
+        </section>
+        
+        <section id="servicios">
+            <h2>SERVICIOS</h2>      <!-- Se declara como como h2 para que el navegador le de importancia aunque luego sea un texto pequeño -->
+            <p class="servicios-text">Soluciones diseñadas para alto rendimiento</p>
+            <div class="contenedor-soluciones"> <!-- Se genera un contenedor generico para todas las tarjetas con el fin de distribuirlas de manera equitativa con display grid -->
+                <article class="carta"> <!-- Se genera un contenedor que se repitira ya que sera igual para todas las opciones, solo cambiendo lo siguiente: -->
+                    <img src="img/cloude_native.png" class="imagen" alt=""> <!-- Imagen -->
+                    <h3>Cloude Native</h3>                                  <!-- Nombre de la opcion -->
+                    <p>Migración y gestión de contenedores con alta disponibilidad multi-región.</p> <!-- Informacion -->
+                </article>
+                <article class="carta">
+                    <img src="img/analitycs_bi.png" class="imagen" alt="">
+                    <h3>Analytics and BI</h3>
+                    <p>Tableros ejecutivos en tiempo real impulsados por pipelines de datos seguros.</p>
+                </article>
+                <article class="carta">
+                    <img src="img/ciberseguridad.png" class="imagen" alt="">
+                    <h3>Ciberseguridad</h3>
+                    <p>Auditorías continuas, zero-trust network access y cumplimiento normativo.</p>
+                </article>
+                <article class="carta">
+                    <img src="img/devops.png" class="imagen" alt="">
+                    <h3>DevSecOps</h3>
+                    <p>Automatización de CI/CD integrada con escaneo de vulnerabilidades.</p>
+                </article>
+                <article class="carta">
+                    <img src="img/edge_computing.png" class="imagen" alt="">
+                    <h3>Edge Computing</h3>
+                    <p>Baja latencia global con despliegue distribuido de microservicios.</p>
+                </article>
+                <article class="carta">
+                    <img src="img/soporte.png" class="imagen" alt="">
+                    <h3>Soporte 24/7/365</h3>
+                    <p>SLA garantizado con ingeniería dedicada en incidentes críticos.</p>
+                </article>
+            </div>
+        </section>
+        
+        <section id="contactanos">
+            <h2>Contactanos</h2>
+            <p>Hablemos de tu próximo proyecto</p>
+            <p>Completa el formulario y un especialista responderá en menos de 2 horas.</p>
+            
+            <form>
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" placeholder="Ej. Nombre Apellido" required>
+                
+                <label for="#email">Correo Electronico</label>
+                <input type="email" id="email" placeholder="nombre@empresa.com" required>
+                
+                <label for="#mensaje">Mensaje</label>
+                <input type="text" id="mensaje" placeholder="Cuéntanos sobre tus requerimientos...">
+                
+                <button type="button">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

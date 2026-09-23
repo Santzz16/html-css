@@ -3,7 +3,7 @@
     --acento-principal-2: linear-gradient(135deg, #4F46E5, #7C3AED); /* se crean los colores de toda la pagina */
     --neutro-oscuro: #0F172A;
     --neutro-medio: #475569;
-    --neutro-claro-: #F8FAFC;
+    --neutro-claro: #F8FAFC;
     --neutro-claro-2: #FFFFFF;
     --bordes-sutiles: #E2E8F0;
 }
@@ -17,7 +17,11 @@
 }
 
 header{
+    background-color: var(--neutro-claro-2); /*Se le aplica color para que al bajar la navbar no se vea transparente*/
     padding: 15px 20px;
+    position: sticky; /* Se le aplica posicion sticky para que al desplazarse abajo la barra quede pegada arriba*/
+    top: 0; /* le dice al navegador: quedate pegado quando llegues al borde superior */
+    z-index: 100; /* para que quede por encima del contenido al hacer scroll */
 }
 .navbar{
     display: grid;  /* se utiliza grid para que las columans 1 y 3 midan siempre lo mismo manteniendo el menu en el centro*/
@@ -26,16 +30,15 @@ header{
     height: 80px;
 }
 
-.navbar a{
-    text-decoration: none;
-}
+ a{
+    text-decoration: none;  /*Se elimina la linea debajo de todos los links*/
+}                           
 
 /*LOGO NEXUSCOP*/
 .logo-icon{
-    text-decoration: none;
     font-weight: 700;
-    font-size: 18px;
-    padding: 10px 15px;
+    font-size: 18px;        /*Font-weight le da groso a la letra*/
+    padding: 10px 15px;     /*font-size le da tamaño*/
     border-radius: 10px;
     margin: 10px;
     background-image: var(--acento-principal-2);
@@ -43,34 +46,34 @@ header{
 }
 
 .text-nexus{
-    font-weight: 900;
-    font-size: 20PX;
+    font-weight: 900;   
+    font-size: 20px;
     color: var(--neutro-oscuro);
 }
 
 .text-scorp{
     font-weight: 900;
-    font-size: 20PX;
+    font-size: 20px;
     background-image: var(--acento-principal-2); /*se utiliza background-image ya que color no permite gradientes*/
     background-clip: text;                          /*los gradientes son como una imagen que genera css*/
-    -webkit-background-clip: text;
+    -webkit-background-clip: text;              /*Background-clip y webkit backgroung clip sirven para recortar el fondo solo a las letras del texto*/
     color: transparent;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;  /*Las 2 ultimas lineas le aplican transparencia al texto y asi se pueda ver e color de fondo*/
 }
 
 /*BARRA DE NAVEGACION*/
 .menu{
-    display: flex;
-    list-style: none;
+    display: flex; /*Se ponen en linea los elementos de la navbar*/
+    list-style: none; /*se quitan las viñetas de la lista "menu"*/
 }
 
 .menu a{
-    display: block;
+    display: block;   /*se utiliza para que los margin y padding funcione de maejor manera*/
     color: var(--neutro-medio);
     margin: 12px 14px;
 }
 
-.menu a:hover{
+.menu a:hover{      /*Se les aplica el color de fondo recortado al texto cuando se pasa el cursor por los links de la lista a*/
     background-image: var(--acento-principal-2);
     background-clip: text;
     -webkit-background-clip: text;
@@ -80,12 +83,12 @@ header{
 
 
 /*BOTON EMPEZAR*/
-.btn-empezar {
-    justify-self: end;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: inherit;
+.btn-empezar { 
+    justify-self: end; /*alinea el boton a la derecha*/
+    border: none;  /*Se les eliminar el borde del boton*/
+    cursor: pointer;    /*Se hace que al pasar el cursor se cambia a un puntero*/
+    font-family: inherit;  /*button no obtiene la fuente inicial de la pagina por defecto asi que se le aplica la fuente que se esta utilizando para la pagina*/
+    font-size: 18px;
     font-weight: 450;
     background-color: #ede9fe;
     color: #6d28d9;
@@ -97,3 +100,172 @@ header{
     background-color: #ddd6fe; /* un lavanda un poco más saturado/oscuro */
 }
 
+/*PAGINA PRINCIPAL*/
+main{
+    min-height: 100vh; /*La altura minima del contenido de la pagina es igual a la de la pantalla de cada usuario*/
+}
+
+/*LANDING TIPO HERO*/
+#inicio{
+    display: flex;
+    flex-direction: column;  /*se alinena los elementos en columna*/
+    justify-content: center;   /*todos los hijos directos de hero se alinean verticalmente al medio*/
+    align-items: center;        /*Todos los hijos directos de hero se alinean horizontalmente al medio*/
+    text-align: center;         /*Los textos que son hijos directos de hero se alinean al centro (h1 y p)*/
+    
+    gap: 24px;              /*le damos espacio entre cada hijo de hero*/
+    min-height: 800px;      /*la altura que ocupa el landing nunca sera menor a 800px;*/
+    padding: 50px 20px;
+    
+    background-image: var(--acento-principal-2);        /*Se aplicabackgroung-image ya que es un gradiente y css lo toma como imagen y no como color*/
+}
+
+/*PASTILLA PLATAFORMA CLOUD ENTERPRISE 2026*/
+.pastilla{
+    display: inline-flex; /*convierte el contenedor en flex (pero que sigue*/
+    align-items: center;    /*fluyendo en línea con el resto del contenido, gracias al inline-*/ /*se alinea todo verticalmente haciendo que el punto se vea alineado con el texto*/
+    gap: 6px;       /*se le da espacio entre el punto y el texto*/
+    padding: 5px 12px;
+    
+    background-color: rgb(248 250 252 / 0.2);  /* la sintaxys para el color es una convencion mas actual*/
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+    
+    border: 0.01px ridge var(--bordes-sutiles);
+    border-radius: 20px;
+    
+    color: var(--bordes-sutiles);
+}
+
+.dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #4ADE80;
+    flex-shrink: 0; /*extra de seguridad que hace que el boton se achique si en algun momento el texto es más grande*/
+}
+
+
+/*TITULO DE PAGINA*/
+#inicio h1{
+    max-width: 900px; /*hace que el navegador decida cuando cortar y dar un salto de linea al texto*/
+    color: var(--neutro-claro-2);
+    font-weight: 900;
+    font-size: clamp(56px, 5vw, 80px); /* se adapta según el ancho de pantalla */
+}
+
+
+/*EPLICACION DE LA PAGINA*/
+#inicio p{
+    padding: 20px 0;
+    color: var(--neutro-claro-2);
+    font-weight: 300;
+    font-size: 30px;
+}
+
+/*BOTONES*/
+
+.inicio-btn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Se crean 2 columnas para cada boton*/
+    gap: 1rem;                      /*Se crea el espaciado*/
+}
+
+.inicio-btn a{
+    display: block;  
+    height: 60px;       
+    align-content: center;      /*Se alinea el texto verticalmente*/
+    padding: 0 80px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inicio-btn a:hover {
+  transform: scale(1.05);       /*Se agrega animacion al pasar el cursos encima de los botones*/
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);  
+}
+
+.btn-demostracion{
+    background-color: var(--neutro-claro-2);
+    
+}
+
+.btn-servicios{
+    background-color: rgb(248, 250, 252,0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+    border: 0.01px ridge var(--bordes-sutiles);
+    border-radius: 20px;
+    color: var(--neutro-claro-2);
+}
+
+/*SERVICIOS*/
+
+
+#servicios{
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 20px;
+    gap: 15px;
+    align-items: center;
+}
+
+#servicios h2{/* texto "servicios" */
+    font-weight: 700;
+    font-size: 16px; /* o el valor exacto que buscás para el kicker */
+    letter-spacing: 1px; 
+    background-image: var(--acento-principal-2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+#servicios .servicios-text{ /* se le da mayor tamaño unicamente al texto "Soluciones diseñadas para alto rendimiento" */
+    font-weight:bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.contenedor-soluciones{
+    margin-top: 20px;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /*Se crean las 3 columnas en donde se acomodaran las cartas de opciones*/
+    gap: 24px; /*se asigna un espacio entre cartas*/
+}
+
+.carta{
+    display: flex;  /* Se utiliza flex en vez de grid al ser un contenedor es mas practico*/
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    
+    background-color: #EEF2FF;
+    
+    border: 0.01px solid var(--bordes-sutiles);
+    border-radius: 20px;
+    padding: 20px;
+    
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carta:hover{
+    transform: scale(1.05);       /*Se agrega animacion al pasar el cursos encima de los botones*/
+    box-shadow: 0 6px 16px rgba(0 0 0 / 0.2);  
+}
+
+
+.imagen{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.carta p{
+    color: var(--neutro-medio);
+}
