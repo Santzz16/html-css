@@ -12,14 +12,20 @@
 <body>
 	<header>
         <nav class="navbar"> <!-- Se crea la barra de navegacion completa dentro de header para que quede hasta arriba -->
-                <a href="#inicio" class="logo-link"> <!-- Se crea un link que envuelve tanto el logo como el texto-->
-                    <div class="logo">
-                        <span class="logo-icon">N</span>
-                        <span class="logo-text">
-                            <span class="text-nexus">Nexus</span><span class="text-scorp">Scorp</span> <!--se agrega uno junto al otro ya que al saltar de linea el navegador lo interpreta como un espacio -->
-                        </span>
-                    </div>
-                </a>
+            <input type="checkbox" id="menu-check" />
+            <label for="menu-check" class="menu-boton">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>  
+            <a href="#inicio" class="logo-link"> <!-- Se crea un link que envuelve tanto el logo como el texto-->
+                <div class="logo">
+                    <span class="logo-icon">N</span>
+                    <span class="logo-text">
+                        <span class="text-nexus">Nexus</span><span class="text-scorp">Scorp</span> <!--se agrega uno junto al otro ya que al saltar de linea el navegador lo interpreta como un espacio -->
+                    </span>
+                </div>
+            </a>
             
             <ul class="menu">
                 <li><a href="#inicio">Inicio</a></li>
@@ -111,7 +117,7 @@
     </main>
     
     
-    <footer id="contacto">
+    <footer id="contacto">  <!-- SE CREA EL FOOTER -->
         <section class="enlaces">
             <h2>Enlaces rápidos</h2>
             <ul>

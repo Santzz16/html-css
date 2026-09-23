@@ -14,66 +14,91 @@
     padding: 0;             /* se define la fuente de la pagina*/
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
+    
+}
+#menu-check {
+    position: absolute;
+    opacity: 0;
 }
 
-header{
+.menu-boton {
+    display: none;
+}
+
+header {
     background-color: var(--neutro-claro-2); /*Se le aplica color para que al bajar la navbar no se vea transparente*/
     padding: 15px 20px;
     position: sticky; /* Se le aplica posicion sticky para que al desplazarse abajo la barra quede pegada arriba*/
     top: 0; /* le dice al navegador: quedate pegado quando llegues al borde superior */
     z-index: 100; /* para que quede por encima del contenido al hacer scroll */
 }
-.navbar{
-    display: grid;  /* se utiliza grid para que las columans 1 y 3 midan siempre lo mismo manteniendo el menu en el centro*/
+
+.navbar {
+    display: grid;
     grid-template-columns: 1fr auto 1fr;
-    align-items: center;  /*esto centra los items en sentido vertical*/
+    align-items: center;
     height: 80px;
 }
 
- body a{
-    text-decoration: none;  /*Se elimina la linea debajo de todos los links*/
-}                           
+.logo-link {
+    grid-column: 1;
+}
+
+.menu {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.btn-empezar {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+body a {
+    text-decoration: none; /*Se elimina la linea debajo de todos los links*/
+}
 
 /*LOGO NEXUSCOP*/
-.logo-icon{
+.logo-icon {
     font-weight: 700;
-    font-size: 18px;        /*Font-weight le da groso a la letra*/
-    padding: 10px 15px;     /*font-size le da tamaño*/
+    font-size: 18px; /*Font-weight le da groso a la letra*/
+    padding: 10px 15px; /*font-size le da tamaño*/
     border-radius: 10px;
     margin: 10px;
     background-image: var(--acento-principal-2);
     color: var(--neutro-claro-2);
 }
 
-.text-nexus{
-    font-weight: 900;   
+.text-nexus {
+    font-weight: 900;
     font-size: 20px;
     color: var(--neutro-oscuro);
 }
 
-.text-scorp{
+.text-scorp {
     font-weight: 900;
     font-size: 20px;
     background-image: var(--acento-principal-2); /*se utiliza background-image ya que color no permite gradientes*/
-    background-clip: text;                          /*los gradientes son como una imagen que genera css*/
-    -webkit-background-clip: text;              /*Background-clip y webkit backgroung clip sirven para recortar el fondo solo a las letras del texto*/
+    background-clip: text; /*los gradientes son como una imagen que genera css*/
+    -webkit-background-clip: text; /*Background-clip y webkit backgroung clip sirven para recortar el fondo solo a las letras del texto*/
     color: transparent;
-    -webkit-text-fill-color: transparent;  /*Las 2 ultimas lineas le aplican transparencia al texto y asi se pueda ver e color de fondo*/
+    -webkit-text-fill-color: transparent; /*Las 2 ultimas lineas le aplican transparencia al texto y asi se pueda ver e color de fondo*/
 }
 
 /*BARRA DE NAVEGACION*/
-.menu{
+.menu {
     display: flex; /*Se ponen en linea los elementos de la navbar*/
     list-style: none; /*se quitan las viñetas de la lista "menu"*/
 }
 
-.menu a{
-    display: block;   /*se utiliza para que los margin y padding funcione de maejor manera*/
+.menu a {
+    display: block; /*se utiliza para que los margin y padding funcione de maejor manera*/
     color: var(--neutro-medio);
     margin: 12px 14px;
 }
 
-.menu a:hover{      /*Se les aplica el color de fondo recortado al texto cuando se pasa el cursor por los links de la lista a*/
+.menu a:hover {
+    /*Se les aplica el color de fondo recortado al texto cuando se pasa el cursor por los links de la lista a*/
     background-image: var(--acento-principal-2);
     background-clip: text;
     -webkit-background-clip: text;
@@ -81,13 +106,12 @@ header{
     -webkit-text-fill-color: transparent;
 }
 
-
 /*BOTON EMPEZAR*/
-.btn-empezar { 
+.btn-empezar {
     justify-self: end; /*alinea el boton a la derecha*/
-    border: none;  /*Se les eliminar el borde del boton*/
-    cursor: pointer;    /*Se hace que al pasar el cursor se cambia a un puntero*/
-    font-family: inherit;  /*button no obtiene la fuente inicial de la pagina por defecto asi que se le aplica la fuente que se esta utilizando para la pagina*/
+    border: none; /*Se les eliminar el borde del boton*/
+    cursor: pointer; /*Se hace que al pasar el cursor se cambia a un puntero*/
+    font-family: inherit; /*button no obtiene la fuente inicial de la pagina por defecto asi que se le aplica la fuente que se esta utilizando para la pagina*/
     font-size: 18px;
     font-weight: 450;
     background-color: #ede9fe;
@@ -96,67 +120,67 @@ header{
     border-radius: 10px;
 }
 
-.btn-empezar:hover{
+.btn-empezar:hover {
     background-color: #ddd6fe; /* un lavanda un poco más saturado/oscuro */
 }
 
 /*PAGINA PRINCIPAL*/
-main{
+main {
     min-height: 100vh; /*La altura minima del contenido de la pagina es igual a la de la pantalla de cada usuario*/
 }
 
 /*LANDING TIPO HERO*/
-#inicio{
+#inicio {
     display: flex;
-    flex-direction: column;  /*se alinena los elementos en columna*/
-    justify-content: center;   /*todos los hijos directos de hero se alinean verticalmente al medio*/
-    align-items: center;        /*Todos los hijos directos de hero se alinean horizontalmente al medio*/
-    text-align: center;         /*Los textos que son hijos directos de hero se alinean al centro (h1 y p)*/
-    
-    gap: 24px;              /*le damos espacio entre cada hijo de hero*/
-    min-height: 800px;      /*la altura que ocupa el landing nunca sera menor a 800px;*/
+    flex-direction: column; /*se alinena los elementos en columna*/
+    justify-content: center; /*todos los hijos directos de hero se alinean verticalmente al medio*/
+    align-items: center; /*Todos los hijos directos de hero se alinean horizontalmente al medio*/
+    text-align: center; /*Los textos que son hijos directos de hero se alinean al centro (h1 y p)*/
+
+    gap: 24px; /*le damos espacio entre cada hijo de hero*/
+    min-height: 800px; /*la altura que ocupa el landing nunca sera menor a 800px;*/
     padding: 50px 20px;
-    
-    background-image: var(--acento-principal-2);        /*Se aplicabackgroung-image ya que es un gradiente y css lo toma como imagen y no como color*/
+
+    background-image: var(
+        --acento-principal-2
+    ); /*Se aplicabackgroung-image ya que es un gradiente y css lo toma como imagen y no como color*/
 }
 
 /*PASTILLA PLATAFORMA CLOUD ENTERPRISE 2026*/
-.pastilla{
+.pastilla {
     display: inline-flex; /*convierte el contenedor en flex (pero que sigue*/
-    align-items: center;    /*fluyendo en línea con el resto del contenido, gracias al inline-*/ /*se alinea todo verticalmente haciendo que el punto se vea alineado con el texto*/
-    gap: 6px;       /*se le da espacio entre el punto y el texto*/
+    align-items: center; /*fluyendo en línea con el resto del contenido, gracias al inline-*/ /*se alinea todo verticalmente haciendo que el punto se vea alineado con el texto*/
+    gap: 6px; /*se le da espacio entre el punto y el texto*/
     padding: 5px 12px;
-    
-    background-color: rgb(248 250 252 / 0.2);  /* la sintaxys para el color es una convencion mas actual*/
+
+    background-color: rgb(248 250 252 / 0.2); /* la sintaxys para el color es una convencion mas actual*/
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(10px); /* soporte Safari */
-    
+
     border: 1px ridge var(--bordes-sutiles);
     border-radius: 20px;
-    
+
     color: var(--bordes-sutiles);
 }
 
-.dot{
+.dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #4ADE80;
+    background-color: #4ade80;
     flex-shrink: 0; /*extra de seguridad que hace que el boton se achique si en algun momento el texto es más grande*/
 }
 
-
 /*TITULO DE PAGINA*/
-#inicio h1{
+#inicio h1 {
     max-width: 900px; /*hace que el navegador decida cuando cortar y dar un salto de linea al texto*/
     color: var(--neutro-claro-2);
     font-weight: 900;
     font-size: clamp(56px, 5vw, 80px); /* se adapta según el ancho de pantalla */
 }
 
-
 /*EPLICACION DE LA PAGINA*/
-#inicio p{
+#inicio p {
     padding: 20px 0;
     color: var(--neutro-claro-2);
     font-weight: 300;
@@ -165,45 +189,45 @@ main{
 
 /*BOTONES*/
 
-.inicio-btn{
+.inicio-btn {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* Se crean 2 columnas para cada boton*/
-    gap: 1rem;                      /*Se crea el espaciado*/
+    grid-template-columns: 1fr 1fr; /* Se crean 2 columnas para cada boton*/
+    gap: 1rem; /*Se crea el espaciado*/
 }
 
-.inicio-btn a{
-    display: block;  
-    height: 60px;       
-    align-content: center;      /*Se alinea el texto verticalmente*/
+.inicio-btn a {
+    display: block;
+    height: 60px;
+    align-content: center; /*Se alinea el texto verticalmente*/
     padding: 0 80px;
     border-radius: 18px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .inicio-btn a:hover {
-  transform: scale(1.05);       /*Se agrega animacion al pasar el cursos encima de los botones*/
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);  
+    transform: scale(1.05); /*Se agrega animacion al pasar el cursos encima de los botones*/
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-.btn-demostracion{
+.btn-demostracion {
     background-color: var(--neutro-claro-2);
-    
 }
 
-.btn-servicios{
+.btn-servicios {
     background-color: rgb(248 250 252 / 0.2);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(10px); /* soporte Safari */
-    border: 0.01px ridge var(--bordes-sutiles);
+    border: 1px ridge var(--bordes-sutiles);
     border-radius: 20px;
     color: var(--neutro-claro-2);
 }
 
 /*SERVICIOS*/
 
-
-#servicios{
+#servicios {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
@@ -213,10 +237,11 @@ main{
     align-items: center;
 }
 
-#servicios h2{/* texto "servicios" */
+#servicios h2 {
+    /* texto "servicios" */
     font-weight: 700;
-    font-size: 16px; 
-    letter-spacing: 1px; 
+    font-size: 16px;
+    letter-spacing: 1px;
     background-image: var(--acento-principal-2);
     background-clip: text;
     -webkit-background-clip: text;
@@ -225,68 +250,70 @@ main{
     text-align: center;
 }
 
-#servicios .servicios-text{ /* se le da mayor tamaño unicamente al texto "Soluciones diseñadas para alto rendimiento" */
-    font-weight:bold;
+#servicios .servicios-text {
+    /* se le da mayor tamaño unicamente al texto "Soluciones diseñadas para alto rendimiento" */
+    font-weight: bold;
     font-size: 40px;
     text-align: center;
 }
 
-.contenedor-soluciones{
+.contenedor-soluciones {
     margin-top: 20px;
-    display: grid; 
+    display: grid;
     grid-template-columns: repeat(3, 1fr); /*Se crean las 3 columnas en donde se acomodaran las cartas de opciones*/
     gap: 24px; /*se asigna un espacio entre cartas*/
 }
 
-.carta{
-    display: flex;  /* Se utiliza flex en vez de grid al ser un contenedor es mas practico*/
+.carta {
+    display: flex; /* Se utiliza flex en vez de grid al ser un contenedor es mas practico*/
     flex-direction: column;
     gap: 20px;
     align-items: flex-start;
-    
-    background-color: #EEF2FF;
-    
+
+    background-color: #eef2ff;
+
     border: 1px solid var(--bordes-sutiles);
     border-radius: 20px;
     padding: 20px;
-    
+
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.carta:hover{
-    transform: scale(1.05);       /*Se agrega animacion al pasar el cursos encima de los botones*/
-    box-shadow: 0 6px 16px rgba(0 0 0 / 0.2);  
+.carta:hover {
+    transform: scale(1.05); /*Se agrega animacion al pasar el cursos encima de los botones*/
+    box-shadow: 0 6px 16px rgba(0 0 0 / 0.2);
 }
 
-
-.imagen{
+.imagen {
     width: 50px;
     height: 50px;
     object-fit: contain;
 }
 
-.carta p{
+.carta p {
     color: var(--neutro-medio);
 }
 
-
 /*CONTACTANOS*/
 
-#contactanos{
+#contactanos {
     display: flex;
     flex-direction: column;
-    justify-content: center;   /*todos los hijos directos de hero se alinean verticalmente al medio*/
-    align-items: center;        /*Todos los hijos directos de hero se alinean horizontalmente al medio*/   
+    justify-content: center; /*todos los hijos directos de hero se alinean verticalmente al medio*/
+    align-items: center; /*Todos los hijos directos de hero se alinean horizontalmente al medio*/
     padding: 80px 20px 20px;
     gap: 15px;
     background-color: var(--neutro-claro);
 }
 
-#contactanos h2{    /*texto contactanos*/
+#contactanos h2 {
+    /*texto contactanos*/
     font-weight: 700;
-    font-size: 16px; 
-    letter-spacing: 1px; 
+    font-size: 16px;
+    letter-spacing: 1px;
     background-image: var(--acento-principal-2);
     background-clip: text;
     -webkit-background-clip: text;
@@ -295,19 +322,17 @@ main{
     text-align: center;
 }
 
-
-.hablemos{
-    font-weight:bold;
+.hablemos {
+    font-weight: bold;
     font-size: 40px;
     text-align: center;
 }
 
-.completa{
+.completa {
     color: var(--neutro-medio);
 }
 
-
-#contactanos form{
+#contactanos form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -321,7 +346,8 @@ main{
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-#contactanos form div{ /*se utiliza para que cada label quede mas pegado a su input o textarea sin que el padding del form lo afecte*/
+#contactanos form div {
+    /*se utiliza para que cada label quede mas pegado a su input o textarea sin que el padding del form lo afecte*/
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -332,8 +358,9 @@ main{
     font-weight: 500;
     font-size: medium;
 }
-#contactanos form div input, #contactanos form div textarea {   
-    width: 100%;        /*Hace que los input y textarea se encanchen hasta que topen el padding del form*/
+#contactanos form div input,
+#contactanos form div textarea {
+    width: 100%; /*Hace que los input y textarea se encanchen hasta que topen el padding del form*/
     padding: 12px 14px;
     border: 1px solid var(--bordes-sutiles);
     border-radius: 8px;
@@ -342,42 +369,44 @@ main{
     resize: vertical; /*APlica solo para el textarea y hace que el usuario no la pueda redimensioanr a los ado, solo hacia abajo*/
 }
 
-
 #contactanos form button {
-    border: none;  
-    cursor: pointer;   
-    font-family: inherit;  
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
     font-size: 18px;
     font-weight: 450;
-    background-color: var( --acento-principal);
+    background-color: var(--acento-principal);
     color: var(--neutro-claro-2);
     padding: 13px 20px;
     border-radius: 10px;
 }
 
-footer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+/*FOOTER*/
+
+footer {
+    display: grid; /*Se le asigna display grid para distirbuir el contenido de este footer en 3 columnas*/
+    grid-template-columns: repeat(3, 1fr); /*Se crean 3 columnar del mismo tamaño*/
+    gap: 40px; /*Se asigna un espacio entre columna y columna*/
     background-color: var(--neutro-oscuro);
     padding: 60px 40px;
 }
 
-footer h2{
+footer h2 {
     color: var(--neutro-claro);
 }
 
-.enlaces ul{
-    list-style: none;
+.enlaces ul {
+    list-style: none; /*seleccionamos la lista y eliminamos su estilo*/
 }
 
-.enlaces a{
-    display: block;   /*se utiliza para que los margin y padding funcione de maejor manera*/
+.enlaces a {
+    display: block; /*se utiliza para que los margin y padding funcione de maejor manera*/
     color: var(--neutro-medio);
-    margin: 12px 0;
+    margin: 12px 0; /*le damos espacio entre cada enlace que hay en la ul*/
 }
 
-.contacta-footer{
+.contacta-footer {
+    /*se hace que este hijo del footer ocupe toda la altura del footer, la anchura se ajusta por si sola con grid*/
     height: 100%;
 }
 
@@ -386,6 +415,83 @@ footer h2{
     max-width: 200px;
 }
 
-.contacto-directo p{
+.contacto-directo p {
     color: var(--neutro-medio);
 }
+
+/*DISEÑO RESPONSIVO*/
+
+/*tablet*/
+@media (max-width: 760px){ /*Aplica las reglas que estan aqui dentro SOLAMENTE cuando el ancho de la ventana sea de 760px o menos.*/
+    main {
+        padding-top: 80px; /*Se agrega un padding equivalente al tamaño del header*/
+    }
+    
+    header{
+        position: fixed; /*al hacer que el header sea fixed este sale del flujo normal de main, haciendo que este por encima de main*/
+        width: 100%;        /*Por eso se agrega un padding, ya que no cuenta para header, haciendo que todo el contenido de la pagina empiece desues del header*/
+    }                       /*width 100% hace que ocupe todo el ancho de la pantalla*/
+    
+    .menu, .btn-empezar{
+        display: none;      /*Oculta el boton empezar y el menu es decir la lista ul que es usada como navbar*/
+    }
+    
+    .menu-boton span{ /*Seleccionamos los span que funcionaban como texto asignado al input tipo check*/
+        background-color: #0F172A; /*Se les asigna un color oscuro*/
+        transition: top 0.2s ease, transform 0.2s ease, opacity 0.2s ease; /*indicamos como se aplicaran las transiciones cuando las apliquemos mas adelante*/
+        position: absolute; /*hace que cada rayita pueda posicionarse independientemente dentro de .menu-boton*/
+        width: 22px; /*se les asigna el ancho*/
+        height: 2px;/*se les asigna el alto*/
+        left:11px; /*se indica a cuenta distancia deben estar de su padre .menu-boton a partir de la izquierda*/
+    }
+    .menu-boton span:nth-child(1) { top: 14px; }/*se selecciona el span 1 y se indica a cuanta distancia debe estar de la parte de arriba de su padre .menu-btn*/
+    .menu-boton span:nth-child(2) { top: 21px; }/*se selecciona el span 2 y se indica a cuanta distancia debe estar de la parte de arriba de su padre .menu-btn*/
+    .menu-boton span:nth-child(3) { top: 28px; }/*se selecciona el span 3 y se indica a cuanta distancia debe estar de la parte de arriba de su padre .menu-btn*/
+    
+    .menu-boton{
+        display: block; /*hace que ahora el boton sea visible y junto a el todos sus hijos, es decir los span*/
+        position: absolute; /*sale del glujo normal y se puede colocar donde quiera dentro de su padre directo .navbar*/
+        right: 30px; /*se coloca a 30px del borde derecho*/
+        top: 35px; /*se coloca a 305x del borde superior*/
+        /*se indican las dimensiones del boton*/
+        width: 44px;    
+        height: 44px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #ede9fe;
+    }
+    
+    
+    #menu-check:checked ~ .menu {  /*significa: el checkbox con id menu-check cuando está marcado selecciona .menu, es decir la lista ul de la navbar*/
+        display: flex;
+        flex-direction: column;     /*convierte la lista en un display flex y lo apila en columna*/
+        position: absolute; /*permite ponerlo donde se quiera repecto a su padre .navbar*/
+        top: 80px; /* lo coloca debajo del navbar completo, permite que aun se vea el boton y el logo de nexuscorp */
+        left: 0;
+        width: 100%; /*ocupa todo el ancho de la pantalla*/
+        padding: 20px;/* da espacio para que no se vea todo pegado a los bordes*/
+        gap: 10px; /*da espacio entre los hijos de menu es decir cada li a o link*/
+        background-color: var(--neutro-claro-2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /*se asigna un poco de sombra al cuadrado*/
+    }
+    
+    #menu-check:checked + .menu-boton span:nth-child(1) { /* cuando #menu-check se marca selecciona el span 1, gira 45 grados a la izquierda y se centra al medio del boton*/
+        top: 21px;
+        transform: rotate(45deg);
+    }
+
+    #menu-check:checked + .menu-boton span:nth-child(3) {/* cuando #menu-check se marca selecciona el span 3, gira 45 grados a la izquierda y se centra al medio del boton*/
+        top: 21px;
+        transform: rotate(-45deg);
+    }
+
+    #menu-check:checked + .menu-boton span:nth-child(2) {/* cuando #menu-check se marca selecciona el span 2*/
+        opacity: 0;  /*este span desaparece*/
+    }
+    
+    .contenedor-soluciones, .inicio-btn, footer {
+        grid-template-columns: 1fr; /*todos los grid se apilan en 1 columna para poder caber dentro de la pnatalla, algunos venian de ser 3, 2 columnas y si se achica la pantalla esta no mostrara todo el contenido*/
+    }
+    
+}
+
